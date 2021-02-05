@@ -60,7 +60,7 @@ object Dependency {
 }
 ```
 
-3. 전역 변수 사
+3. 전역 변수 사용
 ```kotlin
 // build.gradle.kts
 buildscript {
@@ -200,35 +200,7 @@ android {
 ```
 
 ## 공용 스크립트 적용하기
-1. buildSrc/build.gradle.kts 설정하기
-```kotlin
-plugins {
-    `kotlin-dsl`
-    `kotlin-dsl-precompiled-script-plugins`
-}
-
-val androidGradleVersion = "4.1.1"
-val kotlinVersion = "1.4.21"
-
-val compileKotlin: org.jetbrains.kotlin.gradle.tasks.KotlinCompile by tasks
-compileKotlin.kotlinOptions {
-    languageVersion = kotlinVersion
-}
-
-repositories {
-    google()
-    jcenter()
-}
-
-dependencies {
-
-    // hard-coded area
-    implementation("com.android.tools.build:gradle:$androidGradleVersion")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-}
-```
+1. buildSrc/build.gradle.kts 설정하기 : 확장함수 사용하기 설정 그대로 이용.
 
 2. custom-lib.gradle.kts 생성하기
 ```kotlin
@@ -257,6 +229,7 @@ dependencies {
 이 모듈은 `id("com.android.library")` 타겟으로 만들었기 때문에 라이브러리 모듈용으로 사용하실 수 있습니다.
 
 3. custom-lib.gradle.kts 적용하기
+
 위의 스크립트는 `custom-lib` 라는 자체 gradle-id 를 가지게 됩니다. 따라서 `id("custom-lib")` 라는 플러그인으로 적용 가능합니다.kotlin
 ```kotlin
 // {library-module}/build.gradle.kts
