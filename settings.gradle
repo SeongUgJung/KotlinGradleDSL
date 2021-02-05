@@ -1,0 +1,3 @@
+rootProject.name = "KotlinGradleDSL"
+include ':app'
+include ':library'
