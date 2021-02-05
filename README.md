@@ -1,3 +1,6 @@
+**Warning**
+현재 작성된 예제는 Android Gradle Plugin 버전에 따라서 정상 동작하지 않을 수 있습니다.
+
 # Android Gradle Kotlin DSL
 
 Gradle Kotlin DSL 에서 빌드스크립트용 전역 변수를 사용하기 위해서는 buildSrc 내에 설정이 필요합니다.
