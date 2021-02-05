@@ -1,4 +1,5 @@
 **Warning**
+
 현재 작성된 예제는 Android Gradle Plugin 버전에 따라서 정상 동작하지 않을 수 있습니다.
 
 # Android Gradle Kotlin DSL
